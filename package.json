@@ -1,0 +1,22 @@
+{
+  "name": "css-is-awesome",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://j-kallunki.github.io/awesome-css-2018",
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "spectacle-scripts": "2.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  }
+}
