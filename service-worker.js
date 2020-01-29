@@ -1,1 +1,34 @@
-"use strict";var precacheConfig=[["/awesome-css-2018/index.html","eb9057a11464c4c2940cd7e305f9839e"],["/awesome-css-2018/static/css/main.653da357.css","521def3ae35e5b12d25e0300c45174f2"],["/awesome-css-2018/static/js/main.edc05793.js","1797b96e2f81d3dc67f4e67770877a9c"],["/awesome-css-2018/static/media/01.32759515.png","32759515cb48361b73a3ab1d4a63b449"],["/awesome-css-2018/static/media/01.b137d20b.apng","b137d20b4c32ed0bf10021e2d21e6188"],["/awesome-css-2018/static/media/02.a6ff92ab.png","a6ff92ab7150a85c5547e6d35af31918"],["/awesome-css-2018/static/media/04.6b05d066.png","6b05d0661c5d723c3b6c08223db4be18"],["/awesome-css-2018/static/media/boom.1a48a81e.svg","1a48a81e7b98b2d9111e06bfe6b44260"],["/awesome-css-2018/static/media/chrome.f3b6c54c.svg","f3b6c54c5cc90485a549a1ae6699a9c4"],["/awesome-css-2018/static/media/cssisawesome.9cc59986.png","9cc599863042e33f990786345e7c6449"],["/awesome-css-2018/static/media/edge.2b2888b5.svg","2b2888b51282bcce340666c7770687b6"],["/awesome-css-2018/static/media/firefox.edf69d10.svg","edf69d104c6d6f1bc83565927d0b8e10"],["/awesome-css-2018/static/media/gofore_logo_blue.3ad288f8.svg","3ad288f89d60f9e5ce72d2f39c530a90"],["/awesome-css-2018/static/media/gofore_logo_white.be186358.svg","be1863586b6379d2f5ba7aebd79f9ec9"],["/awesome-css-2018/static/media/ie.0536654e.svg","0536654eb844a963dd6a6b0844dd52e2"],["/awesome-css-2018/static/media/internetexplorer.88bdffcb.gif","88bdffcb6f7a62d7f1dacc848045644a"],["/awesome-css-2018/static/media/opera.438992de.svg","438992de4e83d2123b1d9cdf8bb4bd03"]],cacheName="sw-precache-v3-sw-precache-webpack-plugin-"+(self.registration?self.registration.scope:""),ignoreUrlParametersMatching=[/^utm_/],addDirectoryIndex=function(e,t){var a=new URL(e);return"/"===a.pathname.slice(-1)&&(a.pathname+=t),a.toString()},cleanResponse=function(t){return t.redirected?("body"in t?Promise.resolve(t.body):t.blob()).then(function(e){return new Response(e,{headers:t.headers,status:t.status,statusText:t.statusText})}):Promise.resolve(t)},createCacheKey=function(e,t,a,s){var n=new URL(e);return s&&n.pathname.match(s)||(n.search+=(n.search?"&":"")+encodeURIComponent(t)+"="+encodeURIComponent(a)),n.toString()},isPathWhitelisted=function(e,t){if(0===e.length)return!0;var a=new URL(t).pathname;return e.some(function(e){return a.match(e)})},stripIgnoredUrlParameters=function(e,a){var t=new URL(e);return t.hash="",t.search=t.search.slice(1).split("&").map(function(e){return e.split("=")}).filter(function(t){return a.every(function(e){return!e.test(t[0])})}).map(function(e){return e.join("=")}).join("&"),t.toString()},hashParamName="_sw-precache",urlsToCacheKeys=new Map(precacheConfig.map(function(e){var t=e[0],a=e[1],s=new URL(t,self.location),n=createCacheKey(s,hashParamName,a,/\.\w{8}\./);return[s.toString(),n]}));function setOfCachedUrls(e){return e.keys().then(function(e){return e.map(function(e){return e.url})}).then(function(e){return new Set(e)})}self.addEventListener("install",function(e){e.waitUntil(caches.open(cacheName).then(function(s){return setOfCachedUrls(s).then(function(a){return Promise.all(Array.from(urlsToCacheKeys.values()).map(function(t){if(!a.has(t)){var e=new Request(t,{credentials:"same-origin"});return fetch(e).then(function(e){if(!e.ok)throw new Error("Request for "+t+" returned a response with status "+e.status);return cleanResponse(e).then(function(e){return s.put(t,e)})})}}))})}).then(function(){return self.skipWaiting()}))}),self.addEventListener("activate",function(e){var a=new Set(urlsToCacheKeys.values());e.waitUntil(caches.open(cacheName).then(function(t){return t.keys().then(function(e){return Promise.all(e.map(function(e){if(!a.has(e.url))return t.delete(e)}))})}).then(function(){return self.clients.claim()}))}),self.addEventListener("fetch",function(t){if("GET"===t.request.method){var e,a=stripIgnoredUrlParameters(t.request.url,ignoreUrlParametersMatching),s="index.html";(e=urlsToCacheKeys.has(a))||(a=addDirectoryIndex(a,s),e=urlsToCacheKeys.has(a));var n="/awesome-css-2018/index.html";!e&&"navigate"===t.request.mode&&isPathWhitelisted(["^(?!\\/__).*"],t.request.url)&&(a=new URL(n,self.location).toString(),e=urlsToCacheKeys.has(a)),e&&t.respondWith(caches.open(cacheName).then(function(e){return e.match(urlsToCacheKeys.get(a)).then(function(e){if(e)return e;throw Error("The cached response that was expected is missing.")})}).catch(function(e){return console.warn('Couldn\'t serve response for "%s" from cache: %O',t.request.url,e),fetch(t.request)}))}});
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
+
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+
+importScripts(
+  "/awesome-css-2018/precache-manifest.8915a85d4a6bd63cc8895d51a321254f.js"
+);
+
+workbox.clientsClaim();
+
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.suppressWarnings();
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerNavigationRoute("/awesome-css-2018/index.html", {
+  
+  blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
+});
